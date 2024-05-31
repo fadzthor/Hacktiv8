@@ -1,0 +1,237 @@
+/* Gaya-gaya CSS untuk tata letak dan penampilan */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Gaya untuk header, termasuk efek latar belakang gradient */
+header {
+    position: relative;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Animasi latar belakang gradient di header */
+header .background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff6347, #ff8c42, #ffd84b, #42a5f5, #1e88e5, #3949ab);
+    background-size: 600% 600%;
+    animation: gradientAnimation 15s ease infinite;
+    z-index: -1;
+}
+
+/* Keyframes untuk animasi latar belakang gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Gaya untuk overlay di header */
+header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Gaya untuk judul dan subjudul di header */
+header h1 {
+    font-size: 3em;
+    margin: 0.5em 0;
+    animation: fadeInDown 2s;
+}
+
+/* Gaya untuk subjudul di header */
+header .subheading {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+    color: #ffd84b;
+    animation: fadeInUp 2s;
+}
+
+/* Keyframes untuk efek fadeInDown */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes untuk efek fadeInUp */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gaya untuk menu navigasi */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+/* Gaya untuk tautan menu navigasi */
+nav ul li {
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd84b;
+    transform: scale(1.1);
+}
+
+/* Gaya untuk konten utama */
+main {
+    padding: 2em 1em;
+    background: #f9f9f9;
+}
+
+/* Gaya untuk bagian-bagian dalam main */
+main section {
+    max-width: 800px;
+    margin: 2em auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+}
+
+main section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+main section h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #ff6347;
+    position: relative;
+    display: inline-block;
+}
+
+main section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background: #ff6347;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+main section h2:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+main section .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInUp 2s;
+}
+
+main section .content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 1em;
+    max-width: 700px;
+    color: #666;
+}
+
+/* Gaya responsif */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
+
+    main section .content {
+        flex-direction: column;
+    }
+}
+
+/* Gaya untuk tombol kembali ke atas */
+#btnBackToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#btnBackToTop:hover {
+    opacity: 1;
+}
